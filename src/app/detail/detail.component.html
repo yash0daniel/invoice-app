@@ -1,5 +1,51 @@
 <div class="container">
-    <h1 onclick="docType()">This is {{ typeOfDoc }}</h1>
-    <p>logo</p>
+
+    <h1>This is {{ typeOfDoc }}</h1>
+
+    <div class="row">
+        <div class="col-md-2">
+            <mat-radio-button (click)="docType(true)" [checked]=labelPosition color="primary">
+                Invoice
+            </mat-radio-button>
+        </div>
+        <div class="col-md-2">
+            <mat-radio-button (click)="docType(false)" [checked]=!labelPosition color="primary">
+                Quotation
+            </mat-radio-button>
+        </div>
+    </div>
+    <br>
+
+    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+    <input hidden (change)="onSelectFile($event)" #fileInput type="file" id="file">
+    <span> Upload a logo here </span>
+    <br>
+    <img [src]="imageSrc" *ngIf="imageSrc" height="200"> <br>
+    <!-- <button mat-raised-button color="basic" (click)="onclear()"> Clear </button>
+    {{ imageSrc }} -->
+
+    <hr>
+</div>
+
+<div class="container" *ngIf="!printingFlag">
+
+    <p>this should be in print function</p>
+    <h1>{{ typeOfDoc }}</h1>
+    <!-- <div class="row">
+        <div class="col-md-2">
+            <mat-radio-button (click)="docType(true)" [checked]=labelPosition color="primary">
+                Invoice
+            </mat-radio-button>
+        </div>
+        <div class="col-md-2">
+            <mat-radio-button (click)="docType(false)" [checked]=!labelPosition color="primary">
+                Quotation
+            </mat-radio-button>
+        </div>
+    </div> -->
+    <br>
+
+    <img [src]="imageSrc" *ngIf="imageSrc" height="100"> <br>
+
     <hr>
 </div>

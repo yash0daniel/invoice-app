@@ -16,4 +16,8 @@ export class PrintPDFComponent implements OnInit {
     console.log("working !!")
     window.print();
   }
+
+  // onBack() {
+  //   console.log("go back to Edit page ")
+  // }
 }

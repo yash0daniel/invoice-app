@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewComponent implements OnInit {
 
+  previewAvailable: any = false
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onpreview() {
+    console.log("Preview");
+    this.previewAvailable = true
+  }
 }
